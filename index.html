@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/8383bace09.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="header">
@@ -14,9 +15,7 @@
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About Me</a></li>
-                    <li><a href="#">Skills</a></li>
-                    <li><a href="#">Working experience</a></li>
-                    <li><a href="#">Conatact</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-text">
@@ -41,13 +40,79 @@
                         knowledge and experience</p>
 
                     <div class="tab-titles">
-                        <p class="tab-links active-link">Skills</p>
-                        <p class="tab-links">Experience</p>
-                        <p class="tab-links">Education</p>
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                    </div>
+                    <div class="tab-content active-tab" id="skills">
+                        <ul>
+                            <li><span>C#</span><br></li>
+                            <li><span>Sql server</span><br></li>
+                            <li><span>Javascript</span><br></li>
+                            <li><span>HTML</span><br></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="Experience">
+                        <ul>
+                            <li><span>Junior software developer</span><br></li>
+                            <li><span>IT administrator</span><br></li>
+                            <li><span>Covid 19 screener</span><br></li>
+                            <li><span>Administrator clerk</span><br></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="Education">
+                        <ul>
+                            <li><span>Belgium campus ITversity</span><br></li>
+                            
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!----Services---->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>My service</p>
+                    <a  href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>IT Support</h2>
+                    <p>My service</p>
+                    <a  href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store-ios"></i>
+                    <h2>Wifi installations</h2>
+                    <p>My service</p>
+                    <a  href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-content");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            
+
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+            
+        }
+    </script>
 </body>
 </html>
